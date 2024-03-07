@@ -14,7 +14,7 @@ app.use('/uploads', express.static(__dirname + "/uploads"));
 mongoose.connect(process.env.MONGODB_URL)
 .then((res) => {
     if (process.env.SERVER_PORT){
-        app.listen(process.env.PORT, () => console.log("Server started listening on port "+ process.env.SERVER_PORT));
+        app.listen(process.env.SERVER_PORT, () => console.log("Server started listening on port "+ process.env.SERVER_PORT));
     }
     console.log("DB Connected");
 })

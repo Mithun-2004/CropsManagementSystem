@@ -8,7 +8,7 @@ const userSchema = mongoose.Schema({
         required: true,
         default: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
     },
-    isAdmi: { type: Boolean, required:true, default:false}
+    isAdmin: { type: Boolean, required:true, default:false}
 }, {timestamps: true})
 
 const User = mongoose.model("User", userSchema);

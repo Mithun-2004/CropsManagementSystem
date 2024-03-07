@@ -6,4 +6,841 @@
   box-sizing : border-box;
   font-family: 'Montserrat', sans-serif;
 }
+:root{
+  --background-color1 : #222;
+  --color1 : #fff;
+  --color2 : #2a52be;
+  --color3 : #009688; 
+  --color4 : #00cec9;
+  --color5 : #81ecec;
+  --post_img_height : 250px;
+  --post_img_width : 300px;
+  --single_folder_img_height : 200px;
+  --single_folder_img_width : 250px;
+}
+body{
+  background-color: var(--background-color1);
+  color : var(--color1);
+}
 
+/* Index Page */
+.IndexPage{
+  min-height : 100vh;
+  width : 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("./images/background3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding : 5% 10%;
+  color : var(--color1);
+}
+.IndexPage #title{
+  text-align : center;
+  margin-bottom : 40px;
+}
+.IndexPage .enter{
+  width : 100%;
+  display : flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Login Page and Register Page */
+.entry h1{
+  color : var(--color3);
+  text-align : center;
+  margin-bottom : 30px;
+}
+.entry-form div{
+  margin-bottom : 15px;
+}
+.entry-form div label{
+  display : block;
+  margin-bottom : 5px;
+}
+#loginUsername, #loginPassword, #registerName, #registerPassword, #confirmPassword{
+  width : 100%;
+  padding : 7px 10px;
+  color : white;
+  background-color: transparent;
+  border : 2px solid var(--color3);
+  outline : 0;
+}
+.buttonWrapper{
+  text-align : center;
+}
+#loginBtn, #registerBtn{
+  cursor : pointer;
+  padding : 7px 20px;
+  border : 2px solid var(--color3);
+  font-weight : bold;
+  outline : 0;
+  margin : 0 auto;
+  transition: 0.5s ease;
+  color : var(--color3);
+  background-color: transparent;
+}
+#loginBtn:hover, #registerBtn:hover{
+  color : white;
+  background-color: var(--color3);
+}
+#switchBtn{
+  background-color: transparent;
+  border : 0;
+  outline : 0;
+  color : var(--color3);
+  font-weight: bold;
+  cursor : pointer;
+  transition: 0.5s ease;
+}
+#switchBtn:hover{
+  color : var(--color2);
+}
+
+input[type=file]::file-selector-button {
+  border: 2px solid var(--color3);
+  padding: .2em .4em;
+  border-radius: .2em;
+  background-color: var(--color3);
+  transition: 1s;
+  cursor : pointer;
+}
+
+input[type=file]::file-selector-button:hover {
+  background-color: var(--color5);
+  border: 2px solid var(--color4);
+}
+.loginError, .registerError{
+  margin-top : 5px;
+  text-align : center;
+  color : crimson;
+  font-weight : bold;
+}
+
+/* Header */
+.header{
+  display : flex;
+  align-items : center;
+  justify-content: space-between;
+  padding: 5px;
+}
+#headerHeading{
+  color : var(--color2);
+  margin-left : 15px;
+}
+#headerHeading span{
+  color : var(--color1);
+}
+.userInfo{
+  margin-right : 20px;
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  gap : 20px;
+  margin-top: 10px;
+}
+.userProfile{
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  gap : 10px;
+}
+.profileAdminPic{
+  height:50px;
+  width:50px;
+  border-radius:50%;
+  border : 5px solid var(--color2);
+  cursor : pointer;
+}
+.profileFarmerPic{
+  height:50px;
+  width:50px;
+  border-radius:50%;
+  border : 2px solid var(--color3);
+  cursor : pointer;
+}
+#logoutBtn{
+  cursor : pointer;
+  background-color: transparent;
+  color : var(--color1);
+  outline : 0;
+  border : 0;
+  font-size : 1rem;
+  position : relative;
+}
+#logoutBtn::after{
+  content: " ";
+  position : absolute;
+  width : 0;
+  height : 2px;
+  display : block;
+  background-color: var(--color2);
+  margin-bottom : -5px;
+  bottom : 0;
+  left : 0;
+  transition: 0.5s ease;
+}
+#logoutBtn:hover::after{
+  width : 105%;
+}
+.header #designation{
+  color : var(--color2);
+  margin-top : 5px;
+}
+#headerBtn{
+  background-color: transparent;
+  outline : 0;
+  border : 0;
+  cursor : pointer;
+}
+.detailsCloseBtnWrapper{
+  text-align: right;
+}
+#detailsCloseBtn{
+  background-color: var(--color1);
+  border : 0;
+  outline : 0;
+  cursor : pointer;
+}
+#detailsCloseBtn i{
+  font-size: 1rem;
+}
+.userDetailsPic{
+  height : 100px;
+}
+.userDetails{
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top : 10px;
+}
+.userDetails h3{
+  margin-bottom : 10px;
+}
+.userDetails p{
+  margin-top: 5px;
+}
+.detailsDesignation{
+  color : var(--color2);
+}
+.uploadCloseBtnWrapper{
+  text-align: right;
+}
+#uploadCloseBtn{
+  background-color: var(--color1);
+  border : 0;
+  outline : 0;
+  cursor : pointer;
+  font-size: 1rem;
+}
+.updateProfilePic{
+  margin-top : 10px;
+  text-align: center;
+}
+#updatePicture{
+  visibility: hidden;
+}
+.updateLabel{
+  background-color : var(--background-color1);
+  color : var(--color1);
+  cursor : pointer;
+  padding : 5px;
+}
+#changePicBtn{
+  background-color: var(--background-color1);
+  padding : 5px;
+  border : 0;
+  outline : 0;
+  cursor : pointer;
+  margin-left: 5px;
+}
+#changePicBtn i{
+  font-size: 1rem;
+  color : var(--color1);
+}
+#removePicBtn{
+  margin-top : 5px;
+  padding : 5px;
+  background-color: var(--color1);
+  outline : 0;
+  cursor : pointer;
+  transition: 0.5s ease;
+}
+#removePicBtn:hover{
+  color : var(--color1);
+  background-color: var(--background-color1);
+}
+
+/* @media screen and (max-width:550px){
+  .userProfile{
+    display : flex;
+    flex-direction: column;
+    align-items : center;
+    justify-content: center;
+  }
+  .userDetails{
+    padding : 10px 20px;
+    border : 2px solid var(--color2);
+  }
+} */
+
+
+/* Admin Pages */
+
+/* Admin Dashboard */
+.dashboardHeader{
+  display : flex;
+  align-items : center;
+  justify-content : space-evenly;
+  flex-wrap: wrap;
+  gap : 20px;
+  margin-top : 20px;
+}
+.dashboardSearch{
+  display : flex;
+  align-items : center;
+  justify-content: center;
+  gap : 10px;
+}
+.dashboardSearch input{
+  width : 100%;
+  padding : 5px;
+  margin-bottom: 5px;
+  border : 2px solid var(--color2);
+  background-color: transparent;
+  color : var(--color1);
+  outline : 0;
+}
+.dashboardSearch select{
+  background-color: var(--color1);
+  border : 0;
+  color : var(--color2);
+  padding : 5px;
+  outline : 0;
+}
+.dashboardSearchBtn{
+  padding : 10px 20px;
+  cursor : pointer;
+  background-color: var(--color1);
+  border : 2px solid var(--color1);
+  outline : 0;
+  color : var(--color2);
+  transition : 0.5s ease;
+}
+.dashboardSearchBtn:hover{
+  border : 2px solid var(--color2);
+  background-color: transparent;
+  color : var(--color1);
+}
+.folders{
+  max-width : 900px;
+  width : 90%;
+  margin : 30px auto;
+}
+.folders h2{
+  text-align : center;
+  color : var(--color1);
+  margin-bottom : 30px;
+}
+.folderTable{
+  width : 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+.folderTable td{
+  border-bottom : 2px solid var(--color2);
+  padding-bottom : 10px;
+}
+.folderItemTitle td{
+  border-bottom : 2px solid var(--color1);
+}
+.folderItemTitle{
+  padding-bottom : 20px;
+  color : var(--color2);
+  border-bottom: 1px solid var(--color1);
+}
+.folderItem a{
+  color : var(--color4);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.5s ease;
+}
+.folderItem a:hover{
+  color : var(--color1);
+}
+.folderTitleAdd{
+  display : flex;
+  align-items : center;
+  justify-content: space-evenly;
+  margin-top : 30px;
+  
+}
+.folderTitleAdd h1{
+  color : var(--color2);
+  font-weight : 500;
+}
+#addFolderBtn{
+  cursor : pointer;
+  outline : 0;
+  border : 2px solid var(--color1);
+  background-color: transparent;
+  color : var(--color2);
+  padding : 10px 20px;
+  font-size : 1rem;
+  transition: 0.5s ease;
+}
+#addFolderBtn:hover{
+  background-color: var(--color1);
+}
+#addFolderModel{
+  color : black;
+}
+.addFolderBtnWrapper{
+  text-align : right;
+}
+#addFolderCloseBtn{
+  border : 0;
+  outline : 0;
+  cursor : pointer;
+  background-color: transparent;
+}
+#addFolderCloseBtn i{
+  font-size : 20px;
+  color : var(--background-color1);
+}
+.addFolderForm{
+  margin-top : 40px;
+  display : flex;
+  align-items : center;
+  justify-content : center;
+  flex-direction : column;
+}
+.addFolderForm h3{
+  margin-bottom : 20px;
+}
+.addFolderForm div{
+  margin-bottom : 10px;
+}
+.addFolderForm input{
+  padding : 7px;
+  outline : 0;
+  width : 250px;
+  min-width : 100%;
+  border : 2px solid grey;
+}
+.addFolderForm input:focus{
+  border : 2px solid var(--background-color1);
+}
+#createFolderBtn{
+  padding : 8px 15px;
+  margin-top : 10px;
+  background-color : transparent;
+  border : 2px solid var(--background-color1);
+  outline : 0;
+  cursor : pointer;
+  transition : 0.5s ease;
+}
+#createFolderBtn:hover{
+  background-color: var(--background-color1);
+  color : var(--color1);
+}
+.dashboardModelError{
+  color : crimson;
+  text-align: center;
+}
+
+
+/* SingleFolderAdmin */
+.folder{
+  max-width : 1000px;
+  width : 90%;
+  margin : 30px auto;
+}
+.folderTitles{
+  display : flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom : 20px;
+}
+.folderTitles span{
+  color : var(--color5);
+}
+.folder h2{
+  margin-bottom : 20px;
+}
+.farmerPic{
+  height : var(--single_folder_img_height);
+  width : var(--single_folder_img_width);
+}
+.postImg{
+  height : var(--single_folder_img_height);
+  width : var(--single_folder_img_width);
+}
+.dropDownTitle{
+  cursor : pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--color2);
+}
+.farmerHolder{
+  max-width : 900px;
+  width : 90%;
+  margin : 0 auto;
+  display : flex;
+  align-items : center;
+  justify-content : center;
+  gap : 20px;
+  flex-wrap : wrap;
+  margin-top : 20px;
+  margin-bottom : 30px;
+}
+.farmerItem{
+  background-color: var(--color1);
+  color : var(--color2);
+  padding : 10px;
+}
+.farmerName{
+  text-align : center;
+}
+.postHolder{
+  max-width : 900px;
+  width : 90%;
+  margin : 0 auto;
+  display : flex;
+  align-items : center;
+  justify-content : center;
+  gap : 20px;
+  flex-wrap : wrap;
+  margin-top : 20px;
+}
+.postItem{
+  text-align : center;
+  border : 2px solid var(--color2);
+  padding : 20px;
+}
+.postAuthor{
+  color : var(--color2);
+  margin-bottom : 10px;
+}
+.postCaption{
+  text-align: justify;
+}
+.postLink{
+  text-align : right;
+  margin-top: 20px;
+}
+.postLink a{
+  color : var(--color2);
+  text-decoration : none;
+  transition : 0.5s ease;
+}
+.postLink a:hover{
+  color : var(--color5);
+}
+#addFarmerBtn{
+  height : 230px;
+  width : 230px;
+  border : 2px solid var(--color1);
+  outline : 0;
+  cursor : pointer;
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+}
+#addFarmerBtn i{
+  font-size : 230px;
+  color : var(--color2);
+}
+#addFarmerBtn:hover{
+  background-color : transparent;
+}
+.addFarmerBtnWrapper{
+  text-align : right;
+}
+#addFarmerCloseBtn{
+  border : 0;
+  outline : 0;
+  cursor : pointer;
+  background-color: transparent;
+}
+#addFarmerCloseBtn i{
+  font-size : 20px;
+  color : var(--background-color1);
+}
+.addFarmerForm{
+  margin-top : 30px;
+  display : flex;
+  justify-content : center;
+  align-items : center;
+  flex-direction : column;
+}
+.addFarmerForm h3{
+  margin-bottom : 15px;
+}
+.addFarmerForm input{
+  outline : 0;
+  border : 2px solid grey;
+  padding : 7px;
+}
+.addFarmerForm input:focus{
+  border : 2px solid var(--background-color1);
+}
+#addFarmerModelBtn{
+  padding : 7px 10px;
+  margin-left : 5px;
+  background-color: var(--background-color1);
+  border : 2px solid var(--background-color1);
+  outline : 0;
+  cursor : pointer;
+  color : var(--color1);
+  transition : 0.5s ease;
+}
+#addFarmerModelBtn:hover{
+  background-color: var(--color1);
+  color : var(--background-color1);
+}
+#addFarmerModelError{
+  margin-top: 10px;
+  color : crimson;
+  text-align: center;
+}
+#deleteFolderBtn{
+  margin-top : 30px;
+  padding : 8px;
+  outline : 0;
+  border : 2px solid var(--color1);
+  cursor : pointer;
+  transition : 0.5s ease;
+}
+#deleteFolderBtn:hover{
+  color : var(--color1);
+  background-color: transparent;
+}
+.deleteError{
+  color : crimson;
+}
+
+
+/* Post Page */
+.singlePost{
+  max-width : 1000px;
+  width : 90%;
+  margin : 20px auto;
+}
+.singlePostTitle{
+  text-align : center;
+}
+.singlePostAuthor, .singlePostDate{
+  text-align: center;
+  margin-bottom: 5px;
+}
+.singlePostAuthor span, .singlePostDate span{
+  color : var(--color2);
+}
+.singlePostImages{
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  gap : 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.singlePostImage{
+  height : var(--post_img_height);
+  width : var(--post_img_width);
+}
+.singlePostCaption{
+  color : var(--color2);
+  margin-top : 30px;
+  margin-bottom : 20px;
+  text-align: justify;
+}
+.singlePostDescription{
+  text-align: justify;
+}
+#deleteBtn{
+  margin-top : 20px;
+  padding : 10px;
+  background-color : var(--color3);
+  outline : 0;
+  border : 2px solid white;
+  color : white;
+  cursor : pointer;
+  transition: 0.5s ease;
+}
+#deleteBtn:hover{
+  background-color : transparent;
+  color : var(--color3);
+  border : 2px solid var(--color3);
+}
+#postError{
+  color : crimson;
+}
+
+/* Add post */
+.addPost{
+  margin : 0 auto;
+  max-width : 1000px;
+  width : 90%;
+}
+.addPost h1{
+  margin-top : 20px;
+  text-align : center;
+  color : var(--color1);
+  text-decoration: underline;
+  text-decoration-color: var(--color3);
+}
+.postForm{
+  max-width : 700px;
+  width : 90%;
+  margin : 30px auto;
+}
+.postForm div{
+  margin-bottom : 15px;
+}
+.postForm div label{
+  display : flex;
+  margin-bottom : 5px;
+}
+.postForm div input{
+  width : 100%;
+  padding : 5px;
+  border : 2px solid var(--color3);
+  outline : 0;
+  background-color: transparent;
+  color : white;
+}
+.postForm div input:focus{
+  border : 2px solid var(--color5);
+}
+.postForm div textarea{
+  border : 2px solid var(--color3);
+  width : 100%;
+  height : 200px;
+  outline : 0;
+  background-color: transparent;
+  color : white;
+  padding : 5px;
+}
+.postForm div textarea:focus{
+  border : 2px solid var(--color5);
+}
+#postSubmitBtn{
+  margin : 0 auto;
+  display : block;
+  padding : 10px 20px;
+  border : 2px solid var(--color1);
+  outline : 0;
+  background-color: var(--color3);
+  cursor : pointer;
+  transition: 0.5s ease;
+}
+#postSubmitBtn:hover{
+  border : 2px solid var(--color3);
+  background-color: transparent;
+  color : white;
+}
+.addPostError{
+  color : crimson;
+  text-align: center;
+}
+
+/* allUsers Page */
+.AllUsers{
+  max-width : 1000px;
+  width : 90%;
+  margin : 30px auto;
+}
+.AllUsers h1{
+  text-align : center;
+  text-decoration: underline;
+  text-decoration-color: var(--color2);
+}
+.usersInfo{
+  /* width : 100%; */
+  margin : 0 auto;
+  border-collapse : separate;
+  border-spacing: 0 10px;
+}
+.userInfo td{
+  /* border-bottom : 2px solid var(--color2); */
+  padding-bottom : 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+.userInfoHeader td{
+  color : var(--color2);
+}
+.userInfoImage{
+  height : 35px;
+  width : 35px;
+  border-radius : 50%;
+  display : block;
+  margin : 0 auto;
+}
+
+
+/* All Users Button Wrapper */
+.allUsersButtonWrapper{
+  position : fixed;
+  bottom : 10px;
+  right : 10px;
+  height : 29px;
+  width : 29px;
+  border-radius: 50%;
+  padding-top : 3px;
+  padding-left : 5px;
+  border: 2px solid var(--color4);
+  background-color: transparent;
+  transition : 0.5s ease;
+}
+#allUsersButton{
+  text-decoration: none;
+  color : var(--color4);
+}
+.allUsersButtonWrapper:hover{
+  background-color: var(--color1);
+  border : 2px solid var(--color1);
+}
+
+/* Extra Farmer page stylings */
+.faDashboardHeading{
+  text-align:center;
+}
+.faColor{
+  color : var(--color3);
+}
+.faFolderTable td{
+  border-bottom :2px solid var(--color3);
+}
+.faPostTitle{
+  display : flex;
+  align-items : center;
+  justify-content: space-between;
+}
+.faPostTitle a{
+  color : var(--color1);
+  text-decoration: none;
+  padding : 10px;
+  background-color: var(--color3);
+  border : 2px solid var(--color1);
+  outline : 0;
+  transition: 0.5s ease;
+}
+.faPostTitle a:hover{
+  color : var(--color3);
+  background-color: transparent;
+}
+.faItem{
+  border : 2px solid var(--color3);
+}
+.faLink a, .faAuthor{
+  color : var(--color3);
+}
+.faDropDownTitle{
+  text-decoration-color: var(--color3);
+}
+.faPostColor span{
+  color : var(--color3);
+}
